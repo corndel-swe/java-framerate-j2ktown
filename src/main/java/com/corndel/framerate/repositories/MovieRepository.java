@@ -69,6 +69,8 @@ public class MovieRepository {
       }
     }
   }
+
+}
 //  public static int numberOfMovies() throws SQLException {
 //    var query = "SELECT COUNT(movie.id) FROM MOVIES";
 //
@@ -82,4 +84,4 @@ public class MovieRepository {
 //      return 0; //
 //    }
 //  }
-}
+

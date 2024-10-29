@@ -45,25 +45,40 @@ public class App {
     });
 
       app.get("/movies/{num}", ctx -> {
-          //ctx.result("Hello, World!");
           int number = Integer.parseInt(ctx.pathParam("num"));
-//          int count = MovieRepository.numberOfMovies();
-
-//          if (count == 0 || number < 0 || number > count) {
-//              ctx.json("Incorrect movie issued");
-//              return;
-//          }
-
           Movie movie = MovieRepository.findById(number);
           List<Review> reviews = ReviewRepository.findByMovie(movie.getId());
-
           ctx.render("movie.html", Map.of("movie", movie, "reviews", reviews));
+      });
+
+      app.get("/review/{num}", ctx -> {
+          int movieId = Integer.parseInt(ctx.pathParam("num"));
+          ctx.render("review/review.html", Map.of("movieId", movieId));
+      });
+
+
+      app.post("/review", ctx -> {
+          try {
+
+              int movieId = Integer.parseInt(ctx.formParam("movieId"));
+              String content = ctx.formParam("review");
+              int rating = Integer.parseInt(ctx.formParam("rating"));
+
+              System.out.println(movieId);
+              System.out.println(content);
+              System.out.println(rating);
+              ReviewRepository.addReview(movieId, content, rating);
+              ctx.render("review/reviewapproved.html");
+
+          } catch(Exception e){
+              System.err.println(e.getMessage());
+              ctx.render("/review/review.html", Map.of("e", e.getMessage()));
+          }
       });
 
 
 
 
-
-    return app;
+      return app;
   }
 }
