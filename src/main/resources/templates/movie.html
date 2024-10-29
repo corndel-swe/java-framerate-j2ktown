@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie List</title>
+</head>
+<body>
+<h1 th:text="${movie.title}"></h1>
+<h1>Reviews </h1>
+<ul>
+    <li th:each="review : ${reviews}">
+        <h1>Content</h1>
+        <span th:text="${review.content}"></span>
+        <h1>Rating</h1>
+        <span th:text="${review.rating}"></span>
+    </li>
+</ul>
+
+
+
+</body>
+</html>

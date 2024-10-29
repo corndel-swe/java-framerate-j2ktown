@@ -1,1 +1,48 @@
-/* TODO: Add your styles here */
+/* Reset some default padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the body to have some padding */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Style the h1 */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, button {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 1em;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+

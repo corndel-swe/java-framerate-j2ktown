@@ -3,6 +3,8 @@ package com.corndel.framerate.exercises;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinThymeleaf;
 
+import java.util.Map;
+
 public class D1E2 {
 
   public static Javalin createApp() {
@@ -15,6 +17,8 @@ public class D1E2 {
         "/d1e2",
         ctx -> {
           var message = "Hello from d1e2!";
+
+          ctx.render("exercises/templates/d1e2.html", Map.of("message",message));
 
           // TODO: Render 'Open resources/templates/d1e2.html' and pass the message
           // TODO: d1e2.html and follow the instructions

@@ -6,6 +6,8 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinThymeleaf;
 
+import java.util.Map;
+
 public class D2E1 {
 
   public static Javalin createApp() {
@@ -25,10 +27,17 @@ public class D2E1 {
     app.get(
         "/d2e1",
         ctx -> {
+
+            ctx.render("d2e1.html");
           // TODO: Render 'd2e1.html'
           // TODO: Open d2e1.html and follow the instructions
         });
 
     return app;
   }
+    public static void main(String[] args) {
+        var javalin = createApp();
+        javalin.start(8081);
+    }
+
 }
