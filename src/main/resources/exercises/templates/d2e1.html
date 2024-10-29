@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,6 +9,7 @@
   <body>
     <h1>Welcome to day 2!</h1>
     <div>
+      <div th:replace="fragments :: marketing"></div>
       <!-- TODO: Insert the partial marketing.html here -->
     </div>
   </body>

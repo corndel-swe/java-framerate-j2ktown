@@ -54,12 +54,13 @@ public class App {
 //              return;
 //          }
 
-
           Movie movie = MovieRepository.findById(number);
           List<Review> reviews = ReviewRepository.findByMovie(movie.getId());
 
           ctx.render("movie.html", Map.of("movie", movie, "reviews", reviews));
       });
+
+
 
 
 

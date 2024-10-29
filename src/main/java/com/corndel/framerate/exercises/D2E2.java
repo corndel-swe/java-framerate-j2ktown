@@ -28,6 +28,8 @@ public class D2E2 {
         "/d2e2",
         ctx -> {
           // TODO: Render 'd2e2.html'
+
+            ctx.render("d2e2.html");
           // (note, we have used setPrefix above so the path is relative to
           // /exercises/templates/)
 
@@ -36,4 +38,10 @@ public class D2E2 {
 
     return app;
   }
+
+    public static void main(String[] args) {
+        var javalin = createApp();
+        javalin.start(8081);
+    }
+
 }
