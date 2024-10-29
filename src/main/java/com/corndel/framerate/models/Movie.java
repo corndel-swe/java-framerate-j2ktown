@@ -42,6 +42,10 @@ public class Movie {
     this.imageURL = imageURL;
   }
 
+  public int getId() {
+    return id;
+  }
+
   private int id;
   public String title;
   public String releaseDate;

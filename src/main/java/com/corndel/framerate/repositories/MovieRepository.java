@@ -69,4 +69,17 @@ public class MovieRepository {
       }
     }
   }
+//  public static int numberOfMovies() throws SQLException {
+//    var query = "SELECT COUNT(movie.id) FROM MOVIES";
+//
+//    try (var con = DB.getConnection();
+//         var stmt = con.prepareStatement(query);
+//         var rs = stmt.executeQuery()) { // Combine the two try-with-resources
+//
+//      if (rs.next()) {
+//        return rs.getInt(1);
+//      }
+//      return 0; //
+//    }
+//  }
 }
